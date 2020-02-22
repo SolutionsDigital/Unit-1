@@ -3,6 +3,7 @@ Project V11     Name : Michael Mathews   Date :  23 /8 / 2020
 Program Allows a user to maintain a list of Countries and capitals that
 are stored in a File called countries.txt (using pickle)  so that latest
 version of the data can be displayed, sorted, added, deleted etc.
+option created to export to CSV using pandas and dataframes
 Data Sourced and varified  @ http://data.un.org/ 2020
 """
 # pickle function used to write and read binary to files
@@ -39,6 +40,7 @@ def export_to_file_bu(myCountriesList_backup):
 
 
 def exportTocsv(myCountriesList):
+    # Exports the lastest list copy to CSV File => export_dataframe.csv
     if (len(myCountriesList)) >= 2:
         countries, capitals, populations = map(list, zip(*myCountriesList))
 
@@ -48,7 +50,7 @@ def exportTocsv(myCountriesList):
     df = DataFrame(countryData, columns=[
                    'CountryList', 'CapitalList', 'PopulationList'])
     export_csv = df.to_csv(
-        r'C:\Users\mmathews\Desktop\export_dataframe.csv', index=None, header=True)
+        r'C:\Users\mmathews\OneDrive - All Saints Anglican School\Digital Solutions\Code\Unit-1\Countries.csv', index=None, header=True)
     print(df)
 
 
