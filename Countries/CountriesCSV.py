@@ -148,10 +148,11 @@ def showOptions():
     print(" [E]  Extend by Countries      - [R]  Remove a Country byName")
     print(" [S]  Sort Countries(A-z)      - [U]  Sort Countries(Z-a) ")
     print(" [T]  Sort Capitals (A-z)      - [V]  Sort Capitals (Z-a)")
-    print(" [H]  Sort Population (H>l)    - [L]  To Sort Population (L<h)")
+    print(" [H]  Sort Population (H>l)    - [L]  RevSort Population (L<h)")
     print(" [W]  Clear data from file     - [Z]  Restore from Backup")
-    print(" [G]  To Test your knowledge   - [X]  to EXIT ")
-    print("************************************************************************")
+    print(" [G]  To Test your knowledge   - [X]  Export to CSV ")
+    print()
+    print("***************************  or  [Q]  to   Quit  ")
 
 
 def addCountry(myCountriesList):
@@ -408,10 +409,12 @@ def main():
             capital_game(country, capital)
         elif userSelection in ("W", "w"):
             clearList(myCountriesList, myCountriesList_backup)
-        elif userSelection in ("Z", "z"):
-            exportTocsv(myCountriesList)
-
         elif userSelection in ("X", "x"):
+            exportTocsv(myCountriesList)
+        elif userSelection in ("Z", "z"):
+            import_from_file_bu(myCountriesList):
+
+        elif userSelection in ("Q", "q"):
             AreYouSure = input("Are You sure you want to quit  Y or N : ")
             if AreYouSure in ("Y", "y"):
                 farewell()
