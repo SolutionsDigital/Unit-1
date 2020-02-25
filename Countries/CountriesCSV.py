@@ -412,7 +412,7 @@ def main():
         elif userSelection in ("X", "x"):
             exportTocsv(myCountriesList)
         elif userSelection in ("Z", "z"):
-            import_from_file_bu(myCountriesList):
+            import_from_file_bu(myCountriesList)
 
         elif userSelection in ("Q", "q"):
             AreYouSure = input("Are You sure you want to quit  Y or N : ")
